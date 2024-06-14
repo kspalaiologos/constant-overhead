@@ -12,6 +12,6 @@ This benchmark aims at testing something else: we wish to determine the *constan
 
 This benchmark will single out runtimes that behave badly in tight (yet very uncomplicated) loops, can't use the typing information well or infer it in the runtime, don't offer rudimentary performance improvement techniques (e.g. integer division), can't inline code efficiently, don't optimise arithmetic and incur unavoidable penalties in array accesses.
 
-## fpaq0
+To make this benchmark fair for runtimes that take an excessively long amount of time in warmup, we will use small and large workloads designed to amortise this.
 
-FPAQ0 is a very simple order-0 statistical model coupled together with a bitwise arithmetic coder due to Matt Mahoney. We slightly simplify it and use it as a benchmark. Among data compression experts, FPAQ0 and variants are used for benchmarking particular bitwise arithmetic coding strategies.
+FPAQ0, the test program, is a very simple order-0 statistical model coupled together with a bitwise arithmetic coder due to Matt Mahoney. We slightly simplify it and use it as a benchmark. Among data compression experts, FPAQ0 and variants are used for benchmarking particular bitwise arithmetic coding strategies.

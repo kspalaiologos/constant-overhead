@@ -10,7 +10,7 @@ public class fpaq0 {
     if ((cxt += cxt + y) >= 256)  cxt = 1;
     return (short) (4096 * (ct[cxt][1] + 1) / (ct[cxt][0] + ct[cxt][1] + 2));
   }
-  public fpaq0_bench() {
+  public fpaq0() {
     x1 = 0;  x2 = 0xffffffff;  p = 2048;
   }
   public void ac_flush(BufferedOutputStream out) throws IOException {

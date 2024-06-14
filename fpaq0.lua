@@ -37,11 +37,8 @@ ffi.cdef[[
   } ac_t;
 ]]
 
-local AC = {}
-AC.__index = AC
-
-function AC.new(stream)
-  local self = setmetatable({}, AC)
+local function make_ac(stream)
+  local self = {}
   self.stream = stream
   self.ac = ffi.new("ac_t")
   self.ac.x1 = 0
@@ -50,16 +47,16 @@ function AC.new(stream)
   return self
 end
 
-function AC:ac_flush()
+local function ac_flush(self)
   self.stream:write(string.char(shr(self.ac.x1, 24)))
 end
 
-function AC:ac_rescale()
+local function ac_rescale(self)
   self.ac.x1 = shl(self.ac.x1, 8)
   self.ac.x2 = bit.bor(shl(self.ac.x2, 8), 255)
 end
 
-function AC:encode_bit(y)
+local function encode_bit(self, y)
   local range = self.ac.x2 - self.ac.x1
   local xmid = self.ac.x1 + shr(range, 12) * self.ac.p + shr(band(range, 0xfff) * self.ac.p, 12)
   self.ac.p = predict(y)
@@ -69,8 +66,8 @@ function AC:encode_bit(y)
     self.ac.x1 = xmid + 1
   end
   while band(bit.bxor(self.ac.x1, self.ac.x2), 0xff000000) == 0 do
-    self:ac_flush()
-    self:ac_rescale()
+    ac_flush(self)
+    ac_rescale(self)
   end
 end
 
@@ -82,15 +79,15 @@ local function encode_file(input, output)
   output:write(string.char(band(shr(length, 16), 0xFF)))
   output:write(string.char(band(shr(length, 8), 0xFF)))
   output:write(string.char(band(length, 0xFF)))
-  local ac = AC.new(output)
+  local ac = make_ac(output)
   while true do
     local c = readeof(input)
     if c == -1 then break end
     for i = 7, 0, -1 do
-      ac:encode_bit(band(shr(c, i), 1))
+      encode_bit(ac, band(shr(c, i), 1))
     end
   end
-  ac:ac_flush()
+  ac_flush(ac)
 end
 
 local input = assert(io.open(arg[1], "rb"))

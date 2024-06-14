@@ -30,6 +30,7 @@ Notes on the benchmark results below:
 - PUC-RIO Lua was not tested, because it is not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
 - Lua, JavaScript and Java solutions make use of object-oriented programming (metatable/prototype-based or class-based).
+- WASI-SDK clang's standard library might use (too) small I/O buffers, worsening its performance.
 
 Interesting findings:
 - Turn-the-GC-off snake oil doesn't work (e.g. through enabling EpsilonGC for Java) for major runtimes makes no difference because the program does not allocate enough to warrant a GC cycle. This is at least a bit surprising, because in programmer folklore, GC is always responsible for all the plagues of the world.

@@ -24,12 +24,14 @@ To make this benchmark fair for runtimes that take an excessively long amount of
 
 FPAQ0, the test program, is a very simple order-0 statistical model coupled together with a bitwise arithmetic coder due to Matt Mahoney. We slightly simplify it and use it as a benchmark. Among data compression experts, FPAQ0 and variants are used for benchmarking particular bitwise arithmetic coding strategies.
 
+# Benchmarks
+
 Notes on the benchmark results below:
 - PUC-RIO Lua was not tested, because it is not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
-- EpsilonGC for Java makes no difference. Maybe because the program doesn't allocate a whole lot :-).
 
-# Author's machine(s)
+Interesting findings:
+- Turn-the-GC-off snake oil doesn't work (e.g. through enabling EpsilonGC for Java) for major runtimes makes no difference because the program does not allocate.
 
 ## Legendre
 

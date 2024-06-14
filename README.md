@@ -18,18 +18,20 @@ But there is a fundamental reason for why you'd want to compare runtimes and let
 
 This benchmark aims at testing something else: we wish to determine the *constant overhead* of a programming language. Of course, the time taken by the algorithm will grow proportionally to the input size, but from a programming standpoint, solutions that have too high constant factor (e.g. compare a program that takes 20n steps vs a program that takes 2n steps for an input of size n) are sometimes not feasible. The methodology is rather simple: take an uncomplicated algorithm which can not be improved too much using standard tricks (autovectorisation, loop unrolling) and translate it to each of the languages, applying performance tweaks (like defining types, turning off the GC, localising data) if they are feasible.
 
-This benchmark will single out runtimes that behave badly in tight (yet very uncomplicated) loops, can't use the typing information well or infer it in the runtime, don't offer rudimentary performance improvement techniques (e.g. integer division), can't inline code efficiently, don't optimise arithmetic and incur unavoidable penalties in array accesses.
+This benchmark will single out runtimes that behave badly in tight (yet very uncomplicated) loops, can't use the typing information well or infer it in the runtime, don't offer rudimentary performance improvement techniques (e.g. integer division), can't inline code efficiently, don't optimise arithmetic, use an inefficient numerical tower, and incur unavoidable penalties in array accesses.
 
 To make this benchmark fair for runtimes that take an excessively long amount of time in warmup, we will use small and large workloads designed to amortise this. Memory usage is not measured. Only publicly available, free runtimes are tested.
 
 FPAQ0, the test program, is a very simple order-0 statistical model coupled together with a bitwise arithmetic coder due to Matt Mahoney. We slightly simplify it and use it as a benchmark. Among data compression experts, FPAQ0 and variants are used for benchmarking particular bitwise arithmetic coding strategies.
 
+# Benchmarks
+
 Notes on the benchmark results below:
 - PUC-RIO Lua was not tested, because it is not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
-- EpsilonGC for Java makes no difference. Maybe because the program doesn't allocate a whole lot :-).
 
-# Author's machine(s)
+Interesting findings:
+- Turn-the-GC-off snake oil doesn't work (e.g. through enabling EpsilonGC for Java) for major runtimes makes no difference because the program does not allocate enough to warrant a GC cycle. This is at least a bit surprising, because in programmer folklore, GC is always responsible for all the plagues of the world.
 
 ## Legendre
 

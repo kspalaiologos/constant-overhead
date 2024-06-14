@@ -50,8 +50,8 @@ Results (book1):
 | Benchmark | Time |
 |-----------|------|
 | Debian clang version 16.0.6 (27) `-O2` | 35.1 ms ± 0.7 ms [User: 33.2 ms, System: 1.5 ms] |
-| gcc version 13.2.0 (Debian 13.2.0-25) `-O2` | 35.7 ms ± 1.3 ms [User: 33.1 ms, System: 2.2 ms] |
 | gcc version 13.2.0 (Debian 13.2.0-25) `-O3 -march=native -mtune=native` | 35.6 ms ± 0.7 ms [User: 33.7 ms, System: 1.6 ms] |
+| gcc version 13.2.0 (Debian 13.2.0-25) `-O2` | 35.7 ms ± 1.3 ms [User: 33.1 ms, System: 2.2 ms] |
 | Debian clang version 16.0.6 (27) `-O3 -march=native -mtune=native` | 35.7 ms ± 1.6 ms [User: 33.7 ms, System: 1.8 ms] |
 | wasmtime-cli 21.0.1 (cedf9aa0f 2024-05-22), wasi-sdk clang version 18.1.2 | 49.4 ms ± 1.3 ms [User: 38.1 ms, System: 12.3 ms] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 87.6 ms ± 2.7 ms [User: 82.8 ms, System: 4.5 ms] |

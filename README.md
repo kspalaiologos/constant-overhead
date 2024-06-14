@@ -29,7 +29,6 @@ FPAQ0, the test program, is a very simple order-0 statistical model coupled toge
 Notes on the benchmark results below:
 - PUC-RIO Lua was not tested, because it is not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
-- Lua, JavaScript and Java solutions make use of object-oriented programming (metatable/prototype-based or class-based).
 - WASI-SDK clang's standard library might use (too) small I/O buffers, worsening its performance.
 
 Interesting findings:
@@ -60,6 +59,7 @@ Results (book1):
 | OpenJDK 64-Bit Server VM (build 17.0.11+9-Debian-1, mixed mode, sharing) | 97.5 ms ± 3.3 ms [User: 98.2 ms, System: 31.7 ms] |
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 123.8 ms ± 2.0 ms [User: 151.4 ms, System: 55.9 ms] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 150.7 ms ± 4.4 ms [User: 148.0 ms, System: 2.5 ms] |
+| Node.js v20.14.0 | 177.5 ms ± 2.3 ms [User: 172.4 ms, System: 32.7 ms] |
 
 Results (enwik8):
 | Benchmark | Time |
@@ -71,5 +71,6 @@ Results (enwik8):
 | wasmtime-cli 21.0.1 (cedf9aa0f 2024-05-22), wasi-sdk clang version 18.1.2 | 5.333 s ± 0.058 s [User: 4.732 s, System: 0.601 s] |
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 5.608 s ± 0.046 s [User: 5.550 s, System: 0.176 s] |
 | OpenJDK 64-Bit Server VM (build 17.0.11+9-Debian-1, mixed mode, sharing) | 5.996 s ± 0.085 s [User: 5.889 s, System: 0.150 s] |
+| Node.js v20.14.0 | 9.412 s ± 0.096 s [User: 9.312 s, System: 0.128 s] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 11.254 s ± 0.114 s [User: 11.146 s, System: 0.108 s] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 19.610 s ± 0.152 s [User: 19.437 s, System: 0.170 s] |

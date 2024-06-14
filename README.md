@@ -1,6 +1,6 @@
 # constant-overhead
 
-A project aimed at measuring the constant overhead of various programming languages.
+A project aimed at measuring the constant overhead of various programming languages and their individual runtimes.
 
 ## Do we have a problem?
 

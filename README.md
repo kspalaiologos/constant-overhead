@@ -65,6 +65,7 @@ Results (book1):
 | PyPy 7.3.16 with GCC 13.2.0 | 251.2 ms ± 6.7 ms [User: 222.7 ms, System: 28.3 ms] |
 
 Results (enwik8):
+
 | Benchmark | Time |
 |-----------|------|
 | Debian clang version 16.0.6 (27) `-O2` | 4.468 s ± 0.014 s [User: 4.343 s, System: 0.124 s] |

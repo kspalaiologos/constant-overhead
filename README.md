@@ -27,7 +27,7 @@ FPAQ0, the test program, is a very simple order-0 statistical model coupled toge
 # Benchmarks
 
 Notes on the benchmark results below:
-- PUC-RIO Lua was not tested, because it is not worth testing.
+- PUC-RIO Lua/CPython were not tested, because they are not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
 - WASI-SDK clang's standard library might use (too) small I/O buffers, worsening its performance.
 - In line with the C implementation, try to not use object-oriented programming: in metatable/prototype-oriented languages, looking up a method in an object is somewhat costly. The code does, however, use any feature of the language feasible to represent the arithmetic encoder state structure that can be passed around. This often amounts to having a class with just a constructor and a few public fields.
@@ -36,7 +36,7 @@ Notes on the benchmark results below:
 Interesting findings:
 - Turn-the-GC-off snake oil doesn't work (e.g. through enabling EpsilonGC for Java). For major runtimes this makes no difference because the program does not allocate enough to warrant a GC cycle. This is at least a bit surprising, because in programmer folklore, GC is always responsible for all the plagues of the world.
 
-## Legendre
+## Laplace
 
 Notebook 20Y7003XPB (LENOVO_MT_20Y7_BU_Think_FM_ThinkPad E14 Gen 3). Specifications:
 - Memory: 40GB.
@@ -47,6 +47,7 @@ Notebook 20Y7003XPB (LENOVO_MT_20Y7_BU_Think_FM_ThinkPad E14 Gen 3). Specificati
   - L2: 4MiB. Clock: 1GHz (1.0ns). Capabilities: pipeline-burst internal write-back unified.
   - L3: 8MiB. Clock: 1GHz (1.0ns). Capabilities: pipeline-burst internal write-back unified.
 - CPU: AMD Ryzen 7 5700U with Radeon Graphics. Use Google to find the specification.
+- OS: Linux laplace 6.8.12-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.8.12-1 (2024-05-31) x86_64 GNU/Linux
 
 Results (book1):
 

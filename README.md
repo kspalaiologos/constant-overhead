@@ -60,6 +60,7 @@ Results (book1):
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 123.8 ms ± 2.0 ms [User: 151.4 ms, System: 55.9 ms] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 150.7 ms ± 4.4 ms [User: 148.0 ms, System: 2.5 ms] |
 | Node.js v20.14.0 | 177.5 ms ± 2.3 ms [User: 172.4 ms, System: 32.7 ms] |
+| PyPy 7.3.16 with GCC 13.2.0 | 251.2 ms ± 6.7 ms [User: 222.7 ms, System: 28.3 ms] |
 
 Results (enwik8):
 | Benchmark | Time |
@@ -74,3 +75,4 @@ Results (enwik8):
 | Node.js v20.14.0 | 9.412 s ± 0.096 s [User: 9.312 s, System: 0.128 s] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 11.254 s ± 0.114 s [User: 11.146 s, System: 0.108 s] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 19.610 s ± 0.152 s [User: 19.437 s, System: 0.170 s] |
+| PyPy 7.3.16 with GCC 13.2.0 | 24.717 s ± 0.504 s [User: 24.101 s, System: 0.613 s] |

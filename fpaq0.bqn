@@ -51,4 +51,4 @@ in‿out:
     Fclose∘⥊¨ in_stream‿out_stream
 }
 
-EncodeFile "book1.bz3"‿"/dev/null"
+EncodeFile •args

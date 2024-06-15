@@ -61,7 +61,9 @@ Results (book1):
 | wasmtime-cli 21.0.1 (cedf9aa0f 2024-05-22), wasi-sdk clang version 18.1.2 | 49.4 ms ± 1.3 ms [User: 38.1 ms, System: 12.3 ms] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 87.6 ms ± 2.7 ms [User: 82.8 ms, System: 4.5 ms] |
 | OpenJDK 64-Bit Server VM (build 17.0.11+9-Debian-1, mixed mode, sharing) | 97.5 ms ± 3.3 ms [User: 98.2 ms, System: 31.7 ms] |
+| OpenJDK 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing) | 107.3 ms ± 2.3 ms [User: 140.0 ms, System: 36.6 ms] |
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 123.8 ms ± 2.0 ms [User: 151.4 ms, System: 55.9 ms] |
+| OpenJDK 64-Bit Server VM Corretto-8.412.08.1 | 128.7 ms ± 3.6 ms [User: 148.0 ms, System: 45.0 ms] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 150.7 ms ± 4.4 ms [User: 148.0 ms, System: 2.5 ms] |
 | Node.js v20.14.0 | 177.5 ms ± 2.3 ms [User: 172.4 ms, System: 32.7 ms] |
 | PyPy 7.3.16 with GCC 13.2.0 | 251.2 ms ± 6.7 ms [User: 222.7 ms, System: 28.3 ms] |
@@ -77,6 +79,8 @@ Results (enwik8):
 | wasmtime-cli 21.0.1 (cedf9aa0f 2024-05-22), wasi-sdk clang version 18.1.2 | 5.333 s ± 0.058 s [User: 4.732 s, System: 0.601 s] |
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 5.608 s ± 0.046 s [User: 5.550 s, System: 0.176 s] |
 | OpenJDK 64-Bit Server VM (build 17.0.11+9-Debian-1, mixed mode, sharing) | 5.996 s ± 0.085 s [User: 5.889 s, System: 0.150 s] |
+| OpenJDK 64-Bit Server VM Corretto-8.412.08.1 | 6.122 s ± 0.086 s [User: 6.030 s, System: 0.167 s] |
+| OpenJDK 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing) | 7.091 s ± 0.149 s [User: 7.000 s, System: 0.176 s] |
 | Node.js v20.14.0 | 9.412 s ± 0.096 s [User: 9.312 s, System: 0.128 s] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 11.254 s ± 0.114 s [User: 11.146 s, System: 0.108 s] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 19.610 s ± 0.152 s [User: 19.437 s, System: 0.170 s] |

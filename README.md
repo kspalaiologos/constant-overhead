@@ -30,6 +30,7 @@ Notes on the benchmark results below:
 - PUC-RIO Lua was not tested, because it is not worth testing.
 - LuaJIT lacks a way to issue `idiv` and likely pays for it, but according to `luajit -lp` most of the time is spent in the arithmetic coder anyway.
 - WASI-SDK clang's standard library might use (too) small I/O buffers, worsening its performance.
+- In line with the C implementation, try to not use object-oriented programming: in metatable/prototype-oriented languages, looking up a method in an object is somewhat costly. The code does, however, use any feature of the language feasible to represent the arithmetic encoder state structure that can be passed around. This often amounts to having a class with just a constructor and a few public fields.
 
 Interesting findings:
 - Turn-the-GC-off snake oil doesn't work (e.g. through enabling EpsilonGC for Java). For major runtimes this makes no difference because the program does not allocate enough to warrant a GC cycle. This is at least a bit surprising, because in programmer folklore, GC is always responsible for all the plagues of the world.

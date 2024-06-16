@@ -87,3 +87,4 @@ Results (enwik8):
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 11.254 s ± 0.114 s [User: 11.146 s, System: 0.108 s] |
 | luajit/unstable,now 2.1.0+openresty20240314-1 `-O3` | 19.610 s ± 0.152 s [User: 19.437 s, System: 0.170 s] |
 | PyPy 7.3.16 with GCC 13.2.0 | 24.717 s ± 0.504 s [User: 24.101 s, System: 0.613 s] |
+| CBQN 05690c001a41e2fe7ad9d7bae3c74694b3fe446b | 8 min 23.770 s [User: 503.31 s, System: 0.430 s] |

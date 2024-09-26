@@ -81,7 +81,6 @@ Results (enwik8):
 | OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 5.608 s ± 0.046 s [User: 5.550 s, System: 0.176 s] |
 | OpenJDK 64-Bit Server VM (build 17.0.11+9-Debian-1, mixed mode, sharing) | 5.996 s ± 0.085 s [User: 5.889 s, System: 0.150 s] |
 | OpenJDK 64-Bit Server VM Corretto-8.412.08.1 | 6.122 s ± 0.086 s [User: 6.030 s, System: 0.167 s] |
-| CBQN 05690c001a41e2fe7ad9d7bae3c74694b3fe446b | 3.916 s ± 0.139 s [User: 3.906 s, System: 0.010 s] |
 | OpenJDK 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing) | 7.091 s ± 0.149 s [User: 7.000 s, System: 0.176 s] |
 | Node.js v20.14.0 | 9.412 s ± 0.096 s [User: 9.312 s, System: 0.128 s] |
 | `native-image` OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 17.0.4+8-jvmci-22.2-b06, mixed mode, sharing) | 11.254 s ± 0.114 s [User: 11.146 s, System: 0.108 s] |
